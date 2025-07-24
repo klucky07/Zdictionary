@@ -1,13 +1,9 @@
 import  { useState, useEffect } from 'react';
 import axios from 'axios';  
-export const HeroSection = () => {  
-    const [words, setWords] = useState([]);
+export const HeroSection = ({words}) => {  
+   
 
-  useEffect(() => {
-    axios.get('http://localhost:3000/')
-      .then((res) => setWords(res.data))
-      .catch((err) => console.error(err));
-  }, []);
+  
 return (
     <div className="p-6 max-w-4xl h-[500px] overflow-y-auto mx-auto">
  

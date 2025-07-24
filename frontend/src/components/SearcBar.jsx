@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { NewAddword } from './NewAddword';
-export const SearchBar = () => {
-    const [searchTerm, setSearchTerm] = useState('');
+export const SearchBar = ({searchTerm,setSearchTerm}) => {
+  
   return (
   <div className="absolute flex items-center  justify-center gap-6   w-full px-4">
   

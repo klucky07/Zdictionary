@@ -35,10 +35,12 @@ app.put('/data', async (req, res) => {
     const existingWord = await Word.findOne({ word });
     if (existingWord) {
       return res.status(400).json({ message: 'Word already exists' });
+      alert('Word already exists');
     }
 
     const newWord = await Word.create({ word, meaning });
     return res.status(201).json({ message: 'Word added successfully', data: newWord });
+    alert('Word added successfully');
   } catch (error) {
     return res.status(500).json({ message: 'Internal server error', error: error.message });
   }

@@ -1,13 +1,28 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { SearchBar } from './components/SearcBar'
 import { HeroSection } from './components/HeroSection'
+import axios from 'axios'
+
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+   const [allWords, setAllWords] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    axios.get('http://localhost:3000/')
+      .then((res) => setAllWords(res.data))
+      .catch((err) => console.error(err));
+  }, 500);
+
+  const filteredWords = allWords.filter(word =>
+    word.word.toLowerCase().includes(searchTerm.toLowerCase()) 
+    
+  );
 
   return (
     
@@ -19,12 +34,10 @@ function App() {
     </div>
   
   <div className="flex items-center justify-center  py-20">
-    <SearchBar />
-    
-   
+    <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
   </div>
   <div>
-    <HeroSection />
+    <HeroSection words={filteredWords} />
   </div>
 </div>
 
