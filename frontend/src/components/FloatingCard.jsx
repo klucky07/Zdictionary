@@ -2,7 +2,8 @@ import  { use, useState } from 'react';
 import axios from 'axios';
 import { BACKEND_URL } from '../config'; // Assuming you have a config file for the backend URL
 
-export const FloatingCard = () => {
+
+export const FloatingCard = ({onClick,setOnClick}) => {
     const [word, setWord] = useState('');
     const [meaning, setMeaning] = useState('');
     
@@ -14,7 +15,7 @@ export const FloatingCard = () => {
         word,
         meaning,
       });
-
+alert("added successfully");
     
       setWord('');
       setMeaning('');
@@ -52,7 +53,7 @@ export const FloatingCard = () => {
 
   <div className="flex justify-center pt-2">
     <button
-      onClick={handleAddWord}
+      onClick={() => { handleAddWord(); setOnClick(false); }}
       className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg transition duration-300"
     >
       Add Word

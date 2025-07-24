@@ -14,7 +14,7 @@ export const NewAddword = () =>{
   </button>
   {onClick && (
     <div className='absolute top-15 z-10'>
-<FloatingCard/>
+<FloatingCard onClick={handleClick} setOnClick={setOnClick} />
     </div>
         
       )}
