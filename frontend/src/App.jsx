@@ -7,6 +7,7 @@ import { HeroSection } from './components/HeroSection'
 import axios from 'axios'
 import { BookOpen } from 'lucide-react'
 import  Iridescence  from './components/Iridescence'
+import { BACKEND_URL } from './config'
 
 
 
@@ -17,7 +18,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3000/')
+    axios.get(`${BACKEND_URL}/`)
       .then((res) => setAllWords(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -43,7 +44,7 @@ function App() {
     <div>
       <div className="flex items-center py-10 justify-center gap-3 mb-4">
             <BookOpen className="h-7 w-7 mt-2 text-blue-600" />
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-800 to-purple-800 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-800 to-purple-800 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
               Dictionary
             </h1>
           </div>

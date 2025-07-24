@@ -1,0 +1,1 @@
+export const BACKEND_URL='https://backend-i9ie.onrender.com'

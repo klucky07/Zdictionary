@@ -1,5 +1,7 @@
 import  { use, useState } from 'react';
 import axios from 'axios';
+import { BACKEND_URL } from '../config'; // Assuming you have a config file for the backend URL
+
 export const FloatingCard = () => {
     const [word, setWord] = useState('');
     const [meaning, setMeaning] = useState('');
@@ -8,7 +10,7 @@ export const FloatingCard = () => {
    
 
     try {
-      const response = await axios.put('http://localhost:3000/data', {
+      const response = await axios.put(`${BACKEND_URL}/data`, {
         word,
         meaning,
       });
