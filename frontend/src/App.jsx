@@ -5,6 +5,9 @@ import './App.css'
 import { SearchBar } from './components/SearcBar'
 import { HeroSection } from './components/HeroSection'
 import axios from 'axios'
+import { BookOpen } from 'lucide-react'
+import  Iridescence  from './components/Iridescence'
+
 
 
 
@@ -17,7 +20,7 @@ function App() {
     axios.get('http://localhost:3000/')
       .then((res) => setAllWords(res.data))
       .catch((err) => console.error(err));
-  }, 500);
+  }, []);
 
   const filteredWords = allWords.filter(word =>
     word.word.toLowerCase().includes(searchTerm.toLowerCase()) 
@@ -26,11 +29,24 @@ function App() {
 
   return (
     
-   <div className="bg-white min-h-screen">
+   <div className=" relative  min-h-screen">
+    
+       <div className="absolute inset-0 -z-10">
+        <Iridescence
+          color={[1, 1, 1]}
+          mouseReact={false}
+          amplitude={0.1}
+          speed={1.0}
+        />
+      </div>
+    
     <div>
-      <p className='text-3xl font-bold text-center py-10'>
-        Gen Z Dictionary
-      </p>
+      <div className="flex items-center py-10 justify-center gap-3 mb-4">
+            <BookOpen className="h-7 w-7 mt-2 text-blue-600" />
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-800 to-purple-800 bg-clip-text text-transparent">
+              Dictionary
+            </h1>
+          </div>
     </div>
   
   <div className="flex items-center justify-center  py-20">

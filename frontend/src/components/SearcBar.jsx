@@ -4,7 +4,7 @@ import { NewAddword } from './NewAddword';
 export const SearchBar = ({searchTerm,setSearchTerm}) => {
   
   return (
-  <div className="absolute flex items-center  justify-center gap-6   w-full px-4">
+  <div className="absolute flex flex-col  items-center  justify-center gap-6   w-full px-4">
   
   <div className="relative w-full max-w-md">
     
@@ -19,7 +19,7 @@ export const SearchBar = ({searchTerm,setSearchTerm}) => {
     onChange={(e) => setSearchTerm(e.target.value)}
       type="text"
       placeholder="Search..."
-      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="w-full pl-10 pr-4 py-3 border border-gray-400 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
     />
   </div>
     <div className=' '>

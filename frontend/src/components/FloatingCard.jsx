@@ -23,14 +23,14 @@ export const FloatingCard = () => {
   
 
     return (
-        <div className="w-full max-w-md mx-auto bg-white border border-gray-200 rounded-2xl shadow-xl p-4 space-y-1">
-  <h2 className="text-2xl font-bold text-center text-green-700">Add New Word</h2>
+        <div className="w-2/3 max-w-md mx-auto bg-white border border-gray-200 rounded-2xl shadow-xl p-2 space-y-1">
+  
 
   <div className="flex flex-col space-y-1">
     <label className="text-gray-600 font-semibold" htmlFor="word">Word</label>
     <input
       onChange={(e) => setWord(e.target.value)}
-      className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+      className="border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-green-400"
       type="text"
       id="word"
       placeholder="Enter word"
@@ -41,7 +41,7 @@ export const FloatingCard = () => {
     <label className="text-gray-600 font-semibold" htmlFor="meaning">Meaning</label>
     <input
       onChange={(e) => setMeaning(e.target.value)}
-      className="border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+      className="border border-gray-300 rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-green-400"
       type="text"
       id="meaning"
       placeholder="Enter meaning"
